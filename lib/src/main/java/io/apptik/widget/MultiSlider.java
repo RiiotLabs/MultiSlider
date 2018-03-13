@@ -795,14 +795,14 @@ public class MultiSlider extends View {
         int currIdx = mThumbs.indexOf(thumb);
 
 
-        if (mThumbs.size() > currIdx + 1 && value > mThumbs.get(currIdx + 1).getValue() -
-                mStepsThumbsApart * mStep) {
-            value = mThumbs.get(currIdx + 1).getValue() - mStepsThumbsApart * mStep;
+        if (mThumbs.size() > currIdx + 1
+                && value > mThumbs.get(currIdx + 1).getValue() - mStepsThumbsApart) {
+            value = mThumbs.get(currIdx + 1).getValue() - mStepsThumbsApart;
         }
 
-        if (currIdx > 0 && value < mThumbs.get(currIdx - 1).getValue() + mStepsThumbsApart *
-                mStep) {
-            value = mThumbs.get(currIdx - 1).getValue() + mStepsThumbsApart * mStep;
+        if (currIdx > 0
+                && value < mThumbs.get(currIdx - 1).getValue() + mStepsThumbsApart) {
+            value = mThumbs.get(currIdx - 1).getValue() + mStepsThumbsApart;
         }
 
         if ((value - mScaleMin) % mStep != 0) {
